@@ -1,0 +1,58 @@
+CREATE TABLE [dbo].[paypal_daily_count](
+    [Id] [int] IDENTITY(1,1) NOT NULL,
+    [start_date] [datetime] NULL,
+    [end_date] [datetime] NULL,
+    [count] [int] NULL,
+    [check_count] [int] NULL
+)
+
+CREATE TABLE [dbo].[paypal_cart](
+    [Id] [int] IDENTITY(1,1) NOT NULL,
+    [transaction_id] [varchar](50) NULL,
+    [transaction_updated_date] [datetime] NULL,
+    [item_name] [varchar](200) NULL,
+    [item_description] [varchar](300) NULL,
+    [item_quantity] [varchar](50) NULL,
+    [item_unit_price] [numeric](18, 6) NULL,
+    [item_amount_value] [numeric](18, 6) NULL,
+    [tax_percentage] [varchar](50) NULL,
+    [invoice_id] [varchar](50) NULL
+)
+
+CREATE TABLE [dbo].[paypal_transaction_info](
+    [Id] [int] IDENTITY(1,1) NOT NULL,
+    [paypal_account_id] [varchar](50) NULL,
+    [transaction_id] [varchar](50) NULL,
+    [paypal_reference_id] [varchar](50) NULL,
+    [paypal_reference_id_type] [varchar](50) NULL,
+    [transaction_event_code] [varchar](50) NULL,
+    [transaction_initiation_date] [datetime] NULL,
+    [transaction_updated_date] [datetime] NULL,
+    [transaction_amount_currency] [varchar](10) NULL,
+    [transaction_amount_value] [numeric](18, 6) NULL,
+    [fee_amount] [numeric](18, 6) NULL,
+    [insurance_amount] [numeric](18, 6) NULL,
+    [shipping_amount] [numeric](18, 6) NULL,
+    [shipping_discount_amount] [numeric](18, 6) NULL,
+    [transaction_status] [varchar](10) NULL,
+    [transaction_note] [varchar](300) NULL,
+    [payment_tracking_id] [varchar](100) NULL,
+    [bank_reference_id] [nvarchar](20) NULL,
+    [transaction_subject] [nvarchar](300) NULL,
+    [ending_balance] [numeric](18, 6) NULL,
+    [available_balance] [numeric](18, 6) NULL,
+    [invoice_id] [varchar](50) NULL,
+    [custom_field] [varchar](100) NULL,
+    [protection_eligibility] [varchar](10) NULL,
+    [payer_account_id] [varchar](50) NULL,
+    [email_address] [nvarchar](100) NULL,
+    [address_status] [varchar](10) NULL,
+    [payer_status] [varchar](10) NULL,
+    [payer_name] [nvarchar](250) NULL,
+    [country_code] [varchar](10) NULL,
+    [shipping_info_name] [nvarchar](250) NULL,
+    [shipping_info_address] [nvarchar](350) NULL,
+    [item_details] [nvarchar](2000) NULL,
+    [shipping_info_method] [nvarchar](250) NULL,
+    [shipping_info_sec_address] [nvarchar](250) NULL
+)
